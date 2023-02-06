@@ -1,31 +1,28 @@
-139. Word Break
+70. Climbing Stairs
 
-Given a string s and a dictionary of strings wordDict, return true if s can be segmented into a space-separated sequence of one or more dictionary words.
+You are climbing a staircase. It takes n steps to reach the top.
 
-Note that the same word in the dictionary may be reused multiple times in the segmentation.
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+
  
 
 Example 1:
 
-Input: s = "leetcode", wordDict = ["leet","code"]
-Output: true
-Explanation: Return true because "leetcode" can be segmented as "leet code".
+Input: n = 2
+Output: 2
+Explanation: There are two ways to climb to the top.
+1. 1 step + 1 step
+2. 2 steps
 Example 2:
 
-Input: s = "applepenapple", wordDict = ["apple","pen"]
-Output: true
-Explanation: Return true because "applepenapple" can be segmented as "apple pen apple".
-Note that you are allowed to reuse a dictionary word.
-Example 3:
-
-Input: s = "catsandog", wordDict = ["cats","dog","sand","and","cat"]
-Output: false
+Input: n = 3
+Output: 3
+Explanation: There are three ways to climb to the top.
+1. 1 step + 1 step + 1 step
+2. 1 step + 2 steps
+3. 2 steps + 1 step
  
 
 Constraints:
 
-1 <= s.length <= 300
-1 <= wordDict.length <= 1000
-1 <= wordDict[i].length <= 20
-s and wordDict[i] consist of only lowercase English letters.
-All the strings of wordDict are unique.
+1 <= n <= 45
