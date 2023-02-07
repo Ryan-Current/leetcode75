@@ -1,5 +1,5 @@
 ﻿namespace Solution;
-public class WordDictionary
+public class MaxProductArray
 {
     // This was my initial approach, using recursion to calculate the max
 
