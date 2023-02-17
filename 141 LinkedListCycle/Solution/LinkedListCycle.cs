@@ -2,19 +2,19 @@
 public class LinkedListCycle
 {
     
-    public bool HasCycle(ListNode head) 
-    {
-        HashSet<ListNode> visited = new HashSet<ListNode>(); 
-        ListNode current = head; 
-        while(current != null)
-        {
-            if(visited.Contains(current))
-                return true; 
-            visited.Add(current); 
-            current = current.next; 
-        }
-        return false; 
-    }
+    // public bool HasCycle(ListNode head) 
+    // {
+    //     HashSet<ListNode> visited = new HashSet<ListNode>(); 
+    //     ListNode current = head; 
+    //     while(current != null)
+    //     {
+    //         if(visited.Contains(current))
+    //             return true; 
+    //         visited.Add(current); 
+    //         current = current.next; 
+    //     }
+    //     return false; 
+    // }
 
 
     // another solution using less memory is to use a slow and a fast node, if there is a loop, 
