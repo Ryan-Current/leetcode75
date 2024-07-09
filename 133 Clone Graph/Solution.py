@@ -64,6 +64,9 @@ class Node:
 from typing import Optional
 class Solution:
     def cloneGraph(self, node: Optional[Node]) -> Optional[Node]:
+
+        # possible to make this approach faster if we just create copies as we find new nodes, keep creating as you add to the forwarded instead of finishing the creation for each node all first
+
         forwarding = {}
         queue = set()
         if node is None:
@@ -85,6 +88,22 @@ class Solution:
 
 
 
-        
-        
+    # O(E + V) (fastest)
+    def cloneGraph(self, node: Optional[Node]) -> Optional[Node]:
+        if node is None:
+            return None 
+
+        forwarding = {}
+        def getCopy(node):
+            if node not in forwarding:
+                forwarding[node] = Node(node.val)
+                for neighbor in node.neighbors:
+                    forwarding[node].neighbors.append(getCopy(neighbor))
+            
+            return forwarding[node]
+                
+
+        return getCopy(node)
+
+
 
