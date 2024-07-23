@@ -46,3 +46,12 @@
  
 
 # Follow up: If this function is called many times, how would you optimize it?
+
+class Solution:
+    def hammingWeight(self, n: int) -> int:
+        ret = 0 
+        while n > 0:
+            ret += n % 2 
+            n = n // 2
+
+        return ret
