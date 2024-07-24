@@ -29,3 +29,33 @@
 # The number of nodes in the tree is in the range [1, 3 * 104].
 # -1000 <= Node.val <= 1000
 
+from typing import Optional
+
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+class Solution:
+    def maxPathSum(self, root: Optional[TreeNode]) -> int:
+        res = [root.val]
+
+        def dfs(node: Optional[TreeNode]) -> int:
+            if node is None:
+                return 0
+            
+            leftMax = max(dfs(node.left), 0)
+            rightMax = max(dfs(node.right), 0)
+
+            # Computing max with split
+            res[0] = max(res[0], node.val + leftMax + rightMax)
+
+            # return the max without splitting (splitting the parent)
+            return node.val + max(leftMax, rightMax)
+
+        dfs(root)
+        return res[0]
+
