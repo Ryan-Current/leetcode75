@@ -54,7 +54,7 @@ class Solution:
             return validBST(node.left, minNode, node.val) and validBST(node.right, node.val, maxNode)
         
 
-        return validBST(root, float('-inf'), float('inf')) 
+        return validBST(root, float('-inf'), float('inf'))
         
 
 
